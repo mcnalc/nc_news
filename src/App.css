@@ -1,0 +1,56 @@
+.App {
+  background-color: lightblue;
+  text-align: center;
+  /* display: grid; */
+  /* grid-template-columns: 3.5fr 1.5fr; */
+  grid-template-rows: 2% 10% 10% 60% 1fr;
+  grid-template-areas:
+    "login login"
+    "header header"
+    "nav nav"
+    "main"
+    "footer footer";
+}
+
+.login {
+  border: 2px solid;
+  background-color: grey;
+  grid-area: login;
+}
+
+.header {
+  border: 2px solid;
+  grid-area: header;
+}
+
+.nav {
+  border: green 2px solid;
+  background-color: pink;
+  grid-area: nav;
+}
+
+.articles {
+  border: 2px solid blue;
+  grid-area: main;
+  background-color: lightgreen;
+}
+
+.one-article {
+  border: 2px solid blue;
+  grid-area: main;
+  background-color: lightgreen;
+}
+
+.postarticle {
+  background-color: white;
+  width: 50%;
+  display: inline-block;
+}
+
+section {
+  border: 2px solid orange;
+}
+
+.footer {
+  border: 2px solid black;
+}
