@@ -30,6 +30,7 @@ export const postArticle = async (article, slug) => {
 };
 
 export const postComment = async (comment, article_id) => {
+  console.log(comment);
   const { data } = await axios.post(
     `${BASE_URL}/articles/${article_id}/comments`,
     comment
@@ -45,14 +46,9 @@ export const getComments = async id => {
   return data.comments;
 };
 
-export const getUsers = async () => {
-  const { data } = await axios.get(`${BASE_URL}/users`);
-  return data.users;
-};
-
 export const getUser = async username => {
   const { data } = await axios.get(`${BASE_URL}/users/${username}`);
-  return data.user[0];
+  return data;
 };
 
 // export const updateLikeCount = (target_id, direction, type) => {

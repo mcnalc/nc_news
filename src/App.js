@@ -6,13 +6,14 @@ import Login from "./components/Login";
 import Articles from "./components/Articles";
 import Article from "./components/Article";
 import Comments from "./components/Comments";
+import UserProfile from "./components/UserProfile";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import * as api from "./api";
 
 class App extends Component {
   state = {
-    user: {},
+    user: { _id: "5be5a10bacf3fd8d0934132e" },
     topics: []
   };
   render() {
@@ -27,6 +28,7 @@ class App extends Component {
           <Articles path="/topics/:topic/articles" />
           <Article path="/articles/:article_id" />
           <Comments path="/articles/:article_id/comments" />
+          <UserProfile path="users/:username" />
         </Router>
         <Footer />
         {/* </Login> */}

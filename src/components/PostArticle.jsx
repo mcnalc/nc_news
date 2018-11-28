@@ -65,7 +65,7 @@ export default class PostArticle extends Component {
     event.preventDefault();
     api
       .postArticle(
-        { ...this.state, created_by: this.props.user._id },
+        { ...this.state, created_by: "5be5a10bacf3fd8d0934132e" },
         this.state.belongs_to
       )
       .then(article => {
