@@ -2,19 +2,22 @@ import React, { Component } from "react";
 import { Link } from "@reach/router";
 
 class Nav extends Component {
+  state = {
+    topics: []
+  };
   render() {
+    const { topics } = this.props;
     return (
       <div className="nav">
-        <ul>
-          <Link to={"/"}>Home</Link>
-          {" | "}
-
-          <Link to="/topics/coding/articles">Coding</Link>
-          {" | "}
-          <Link to="/topics/football/articles">Football</Link>
-          {" | "}
-          <Link to="/topics/cooking/articles">Cooking</Link>
-        </ul>
+        <Link to="/">Home</Link>
+        {"|"}
+        {topics.map(topic => {
+          return (
+            <Link key={topic._id} to={`/topics/${topic.slug}/articles`}>
+              {topic.title} {"|"}
+            </Link>
+          );
+        })}
       </div>
     );
   }

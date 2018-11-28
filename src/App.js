@@ -21,7 +21,7 @@ class App extends Component {
       <div className="App">
         {/* <Login user={this.state.user} login={this.login}> */}
         <Header />
-        <Nav />
+        <Nav topics={this.state.topics} />
         <Router>
           <Articles path="/" />
           <Articles path="/topics/:topic/articles" />

@@ -23,9 +23,30 @@
   grid-area: header;
 }
 
+/* unvisited link */
+a:link {
+  color: hotpink;
+}
+
+/* visited link */
+a:visited {
+  color: hotpink;
+}
+
+/* mouse over link */
+a:hover {
+  color: white;
+}
+
+/* selected link */
+a:active {
+  color: blue;
+}
+
 .nav {
   border: green 2px solid;
-  background-color: pink;
+  background-color: black;
+  color: white;
   grid-area: nav;
 }
 
@@ -33,6 +54,13 @@
   border: 2px solid blue;
   grid-area: main;
   background-color: white;
+}
+
+.comments {
+  border: 2px solid grey;
+  padding: 10px;
+  margin: 10px;
+  background-color: lemonchiffon;
 }
 
 .one-article {
