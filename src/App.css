@@ -32,13 +32,13 @@
 .articles {
   border: 2px solid blue;
   grid-area: main;
-  background-color: lightgreen;
+  background-color: white;
 }
 
 .one-article {
   border: 2px solid blue;
   grid-area: main;
-  background-color: lightgreen;
+  background-color: white;
 }
 
 .postarticle {

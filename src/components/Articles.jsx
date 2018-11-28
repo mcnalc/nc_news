@@ -34,15 +34,6 @@ export default class Articles extends Component {
                       _id={article._id}
                       section={"articles"}
                     /> */}
-
-                    {/* <Link
-                      to={`/articles/${article._id}/comments`}
-                      className="link"
-                    >
-                      <p className="comments">
-                        Comments <i className="fas fa-comment" />
-                      </p>
-                    </Link> */}
                   </div>
                 );
               })}

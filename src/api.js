@@ -29,6 +29,32 @@ export const postArticle = async (article, slug) => {
   return data.article;
 };
 
+export const postComment = async (comment, article_id) => {
+  const { data } = await axios.post(
+    `${BASE_URL}/articles/${article_id}/comments`,
+    comment
+  );
+  return data.comment;
+};
+
+export const getComments = async id => {
+  const URL = id
+    ? `${BASE_URL}/articles/${id}/comments`
+    : `${BASE_URL}/comments`;
+  const { data } = await axios.get(URL);
+  return data.comments;
+};
+
+export const getUsers = async () => {
+  const { data } = await axios.get(`${BASE_URL}/users`);
+  return data.users;
+};
+
+export const getUser = async username => {
+  const { data } = await axios.get(`${BASE_URL}/users/${username}`);
+  return data.user[0];
+};
+
 // export const updateLikeCount = (target_id, direction, type) => {
 //   const url =
 //     type === "comment"
@@ -40,4 +66,9 @@ export const postArticle = async (article, slug) => {
 export const login = async username => {
   const { data } = await axios.get(`${BASE_URL}/users/${username}`);
   return data;
+};
+
+export const vote = async id => {
+  const { data } = await axios.patch(`${BASE_URL}/articles/${id}?vote=up`);
+  console.log(data);
 };

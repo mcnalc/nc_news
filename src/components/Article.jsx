@@ -33,10 +33,9 @@ export default class Article extends Component {
         on {formatDate(this.state.article.created_at)}
         <p>{body}</p>
         <p>Upvotes: {votes}</p>
-        <p>Comments: {comment_count}</p>
-        {/* <Link to={`/articles/${this.props.id}/comments`}>
-          {comment_count} Comments />
-        </Link> */}
+        <Link to={`/articles/${this.props.article_id}/comments`}>
+          {comment_count} Comments
+        </Link>
       </div>
     );
   }
@@ -44,6 +43,16 @@ export default class Article extends Component {
   componentDidMount() {
     this.fetchArticle();
   }
+
+  vote = () => {
+    api.vote(this.state.article_id).then(({ votes }) => {
+      this.setState(state => {
+        return {
+          article: { ...state.article, votes: state.article.votes + 1 }
+        };
+      });
+    });
+  };
 
   fetchArticle = () => {
     api.getArticle(this.props.article_id).then(article => {

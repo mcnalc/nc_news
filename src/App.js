@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Login from "./components/Login";
 import Articles from "./components/Articles";
 import Article from "./components/Article";
+import Comments from "./components/Comments";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import * as api from "./api";
@@ -25,6 +26,7 @@ class App extends Component {
           <Articles path="/" />
           <Articles path="/topics/:topic/articles" />
           <Article path="/articles/:article_id" />
+          <Comments path="/articles/:article_id/comments" />
         </Router>
         <Footer />
         {/* </Login> */}
