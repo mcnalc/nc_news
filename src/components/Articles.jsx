@@ -30,14 +30,15 @@ export default class Articles extends Component {
                           section={"articles"}
                         />
                       </div>
-                      <p className="meta-info">
+                      <div className="meta-info">
                         Posted by {article.created_by.username}
                         {" | "}
                         {formatDate(article.created_at)}
-                        <span className="topic-cat">
-                          <strong>nc/{article.belongs_to}</strong>
-                        </span>
-                      </p>
+                      </div>
+                      <span className="topic-cat">
+                        <strong>nc/{article.belongs_to}</strong>
+                      </span>
+
                       <Link
                         to={`/articles/${article._id}`}
                         className="article-title"
@@ -47,17 +48,19 @@ export default class Articles extends Component {
                       <p className="article-body">
                         {article.body
                           .split(" ")
-                          .slice(0, 60)
+                          .slice(0, 40)
                           .join(" ")}
-                        {article.body.split(" ").length > 60 && (
+                        {article.body.split(" ").length > 40 && (
                           <i className="fas fa-arrow-right" />
                         )}
                       </p>
-                      {`${article.comment_count} ${(article.comment_count ===
-                        1 &&
-                        `Comment`) ||
-                        `Comments`}`}
-                      <i class="fas fa-comment" />
+                      <div className="article-comments">
+                        {`${article.comment_count} ${(article.comment_count ===
+                          1 &&
+                          `Comment`) ||
+                          `Comments`}`}{" "}
+                        <i class="fas fa-comment" />
+                      </div>
                     </div>
                   </div>
                 );

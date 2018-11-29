@@ -38,6 +38,11 @@ export const postComment = async (comment, article_id) => {
   return data.comment;
 };
 
+export const deleteComment = async id => {
+  const result = await axios.delete(`${BASE_URL}/comments/${id}`);
+  return result;
+};
+
 export const getComments = async id => {
   const URL = id
     ? `${BASE_URL}/articles/${id}/comments`

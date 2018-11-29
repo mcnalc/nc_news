@@ -15,8 +15,8 @@ export default class Article extends Component {
     return this.state.loading ? (
       <h2>Loading...</h2>
     ) : (
-      <div key={title} className="one-article">
-        <div className="article-stub">
+      <div key={title} className="articles">
+        <div className="one-article">
           <div classname="votes">
             <Vote className="votes" votes={votes} _id={_id} />
           </div>
@@ -25,19 +25,17 @@ export default class Article extends Component {
             Posted by: {""}
             <Link to={`/users/${this.state.article.created_by.username}`}>
               <strong>
-                <span className="profile-info">
-                  {this.state.article.created_by.username}
-                  <img
-                    src={this.state.article.created_by.avatar_url}
-                    height="20"
-                    width="20"
-                  />
-                </span>
+                {this.state.article.created_by.username}
+                <img
+                  src={this.state.article.created_by.avatar_url}
+                  height="20"
+                  width="20"
+                />
               </strong>
             </Link>
             {" | "} {formatDate(this.state.article.created_at)}
           </div>
-          <p classname="article-body">{body}</p>
+          <div classname="article-body">{body}</div>
           <Link to={`/articles/${this.props.article_id}/comments`}>
             {comment_count} Comments <i class="fas fa-comment" />
           </Link>

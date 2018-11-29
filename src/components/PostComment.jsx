@@ -14,7 +14,7 @@ export default class PostComment extends Component {
       <div>
         <div className="postarticle">
           <h1>
-            Write a new comment <i class="fas fa-pen-square" />
+            <i class="fas fa-pen-square" />
           </h1>
           <form onSubmit={this.handleSubmit} className="article-form">
             <textarea

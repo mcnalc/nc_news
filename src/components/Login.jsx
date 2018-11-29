@@ -13,10 +13,13 @@ class Login extends Component {
     if (user.username) return children;
     return (
       <div className="login">
+        <h1>Welcome to NC News!</h1>
+        <p>You need to log in to read and post</p>
         <form onSubmit={this.handleSubmit}>
           <label htmlFor="username">Username:</label>
           <input
             type="text"
+            value={this.state.username}
             id="username"
             onChange={this.handleChange}
             placeholder="jessjelly"
@@ -25,7 +28,6 @@ class Login extends Component {
           <input type="password" id="password" onChange={this.handleChange} />
           <button>Log in</button>
         </form>
-        <h1>Login bar</h1>
       </div>
     );
   }

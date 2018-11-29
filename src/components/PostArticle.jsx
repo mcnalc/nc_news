@@ -10,11 +10,12 @@ export default class PostArticle extends Component {
 
   render() {
     const topics = ["Select", "coding", "football", "cooking"];
+
     return (
       <div>
         <div className="postarticle">
           <h1>
-            Write a new article <i class="fas fa-pen-square" />
+            <i class="fas fa-pen-square" />
           </h1>
           <form onSubmit={this.handleSubmit} className="article-form">
             <input
@@ -66,7 +67,7 @@ export default class PostArticle extends Component {
     event.preventDefault();
     api
       .postArticle(
-        { ...this.state, created_by: "5be5a10bacf3fd8d0934132e" },
+        { ...this.state, created_by: this.props.user._id },
         this.state.belongs_to
       )
       .then(article => {

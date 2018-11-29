@@ -9,15 +9,17 @@ class Nav extends Component {
     const { topics } = this.props;
     return (
       <div className="nav">
-        <Link to="/">Home</Link>
-        {" | "}
-        {topics.map(topic => {
-          return (
-            <Link key={topic._id} to={`/topics/${topic.slug}/articles`}>
-              {topic.title} {" | "}
-            </Link>
-          );
-        })}
+        <strong>
+          <Link to="/">Home</Link>
+          {" | "}
+          {topics.map(topic => {
+            return (
+              <Link key={topic._id} to={`/topics/${topic.slug}/articles`}>
+                {topic.title} {" | "}
+              </Link>
+            );
+          })}
+        </strong>
       </div>
     );
   }

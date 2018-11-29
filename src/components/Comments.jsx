@@ -18,7 +18,7 @@ export default class Comments extends Component {
           <div>
             <PostComment
               id={this.props.article_id}
-              userId="5be5a10bacf3fd8d0934132e"
+              userId={this.props.user._id}
               addComment={this.addComment}
             />
 
@@ -26,6 +26,14 @@ export default class Comments extends Component {
               return (
                 <div key={comment._id} className="comments">
                   {comment.body}
+                  {this.props.user._id === comment.created_by._id ? (
+                    <button
+                      className="delete"
+                      onClick={() => this.deleteComment(comment._id)}
+                    >
+                      <i class="fas fa-trash-alt" />
+                    </button>
+                  ) : null}
                 </div>
               );
             })}
@@ -55,5 +63,16 @@ export default class Comments extends Component {
   };
   addComment = newComment => {
     this.setState({ comments: [newComment, ...this.state.comments] });
+  };
+
+  deleteComment = id => {
+    api.deleteComment(id).then(result => {
+      const remainingComments = this.state.comments.filter(
+        comment => comment._id !== id
+      );
+      this.setState({
+        comments: remainingComments
+      });
+    });
   };
 }
