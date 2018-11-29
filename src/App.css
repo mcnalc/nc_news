@@ -1,15 +1,21 @@
 .App {
   background-color: lightblue;
+  border: 20px solid black;
   text-align: center;
+  display: inline-block;
   /* display: grid; */
   /* grid-template-columns: 3.5fr 1.5fr; */
-  grid-template-rows: 2% 10% 10% 60% 1fr;
+  grid-template-rows: 2% 10% 10% 60% 5%;
   grid-template-areas:
     "login login"
     "header header"
     "nav nav"
     "main"
     "footer footer";
+}
+
+h1 {
+  font-size: 30px;
 }
 
 .login {
@@ -21,9 +27,19 @@
 .header {
   border: 2px solid;
   grid-area: header;
+  background-image: "../public/newspaper.jpeg";
+}
+
+.topic-cat {
+  color: grey;
 }
 
 /* unvisited link */
+
+a {
+  text-decoration: none;
+}
+
 a:link {
   color: hotpink;
 }
@@ -35,7 +51,7 @@ a:visited {
 
 /* mouse over link */
 a:hover {
-  color: white;
+  color: purple;
 }
 
 /* selected link */
@@ -44,41 +60,117 @@ a:active {
 }
 
 .nav {
-  border: green 2px solid;
+  border: black 2px solid;
   background-color: black;
   color: white;
   grid-area: nav;
 }
 
 .articles {
-  border: 2px solid blue;
+  border: 4px solid black;
+  width: 70%;
+  display: inline-block;
+  border-radius: 15px;
   grid-area: main;
   background-color: white;
-}
-
-.comments {
-  border: 2px solid grey;
   padding: 10px;
   margin: 10px;
-  background-color: lemonchiffon;
 }
 
 .one-article {
-  border: 2px solid blue;
+  border: 4px solid black;
+  width: 70%;
+  display: inline-block;
+  border-radius: 15px;
   grid-area: main;
+  background-color: white;
+  padding: 10px;
+  margin: 10px;
+}
+
+.article-stub {
+  background-color: white;
+  display: grid;
+}
+
+.article-body {
+  text-align: justify;
+  padding: 10px 50px;
+  background-color: white;
+  width: 70%;
+  margin: auto;
+}
+
+.article-title {
+  display: inline-block;
+  font-size: 22px;
+  vertical-align: top;
+  background-color: white;
+  width: 70%;
+  margin: auto;
+}
+
+.comments {
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
   background-color: white;
 }
 
 .postarticle {
   background-color: white;
+  padding: 10px;
+  margin: 20px;
+  border: 4px solid black;
   width: 50%;
   display: inline-block;
+  border-radius: 30px;
+}
+.meta-info {
+  background-color: white;
+  border: 2px solid grey;
+}
+.select-button {
+  padding: 10px;
+  margin: 10px;
 }
 
-section {
-  border: 2px solid orange;
+.votes {
+  width: 20px;
+  height: 5px;
+  padding: 10px 10px;
+  margin: 10px;
+}
+
+.submit-button {
+  background-color: hotpink;
+  height: 20px;
+  width: 100px;
+  border-radius: 5px;
+}
+
+.title-input {
+  border-radius: 10px;
+  padding: 5px;
+  margin: 10px;
+  width: 300px;
+}
+
+.body-input {
+  border-radius: 10px;
+  height: 100px;
+  width: 300px;
+  padding: 10px;
+}
+.userprofile {
+  background-color: white;
+  /* width: 60%; */
+  /* display: inline-block; */
 }
 
 .footer {
   border: 2px solid black;
+  background-color: black;
+  color: white;
 }

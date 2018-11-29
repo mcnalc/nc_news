@@ -12,28 +12,21 @@ export default class PostComment extends Component {
     const topics = ["Select", "coding", "football", "cooking"];
     return (
       <div>
-        <div className="postcomment">
-          <h1>Post new comment</h1>
-          <form onSubmit={this.handleSubmit} className="comment-form">
-            <label htmlFor="title">Title: </label>
-            <input
-              className="title-input"
-              type="text"
-              id="title"
-              value={this.state.title}
-              onChange={this.handleChange}
-            />
-            <br />
-            <label htmlFor="body">Comment </label>
+        <div className="postarticle">
+          <h1>
+            Write a new comment <i class="fas fa-pen-square" />
+          </h1>
+          <form onSubmit={this.handleSubmit} className="article-form">
             <textarea
-              className="second-input"
+              className="body-input"
               type="text"
               id="body"
+              placeholder="Write your comment here"
               value={this.state.body}
               onChange={this.handleChange}
             />
-            <br />
 
+            <br />
             <button className="submit-button">Submit</button>
           </form>
         </div>

@@ -13,27 +13,28 @@ export default class PostArticle extends Component {
     return (
       <div>
         <div className="postarticle">
-          <h1>Post new article</h1>
+          <h1>
+            Write a new article <i class="fas fa-pen-square" />
+          </h1>
           <form onSubmit={this.handleSubmit} className="article-form">
-            <label htmlFor="title">Title: </label>
             <input
               className="title-input"
               type="text"
               id="title"
+              placeholder="Article title"
               value={this.state.title}
               onChange={this.handleChange}
             />
             <br />
-            <label htmlFor="body">Article: </label>
             <textarea
-              className="second-input"
+              className="body-input"
               type="text"
               id="body"
+              placeholder="Write your article here"
               value={this.state.body}
               onChange={this.handleChange}
             />
-            <br />
-            Topic:{" "}
+            <br />{" "}
             <select
               className="select-button"
               value={this.state.belongs_to}

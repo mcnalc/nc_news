@@ -51,20 +51,14 @@ export const getUser = async username => {
   return data;
 };
 
-// export const updateLikeCount = (target_id, direction, type) => {
-//   const url =
-//     type === "comment"
-//       ? `${BASE_URL}/comments/${target_id}?vote=${direction}`
-//       : `${BASE_URL}/articles/${target_id}?vote=${direction}`;
-//   return axios.patch(url).then(({ data }) => data[type]);
-// };
-
 export const login = async username => {
   const { data } = await axios.get(`${BASE_URL}/users/${username}`);
   return data;
 };
 
-export const vote = async id => {
-  const { data } = await axios.patch(`${BASE_URL}/articles/${id}?vote=up`);
+export const vote = async (id, section, direction) => {
+  const { data } = await axios.patch(
+    `${BASE_URL}/articles/${id}?vote=${direction}`
+  );
   console.log(data);
 };

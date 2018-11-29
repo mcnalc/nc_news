@@ -3,6 +3,7 @@ import * as api from "../api";
 import { Link } from "@reach/router";
 import PostArticle from "./PostArticle";
 import Vote from "./Vote";
+import formatDate from "./utils/formatDate";
 
 export default class Articles extends Component {
   state = {
@@ -14,7 +15,6 @@ export default class Articles extends Component {
       <div>
         <PostArticle addArticle={this.addArticle} user={this.props.user} />
         <section>
-          <h1>Articles</h1>
           {this.state.loading ? (
             <h2>Loading...</h2>
           ) : (
@@ -22,18 +22,43 @@ export default class Articles extends Component {
               {this.state.articles.map(article => {
                 return (
                   <div className="articles" key={article._id}>
-                    <div>
-                      <Link to={`/articles/${article._id}`} className="link">
-                        {article.title}
+                    <div className="article-stub">
+                      <div className="votes">
+                        <Vote
+                          votes={article.votes}
+                          _id={article._id}
+                          section={"articles"}
+                        />
+                      </div>
+                      <p className="meta-info">
+                        Posted by {article.created_by.username}
+                        {" | "}
+                        {formatDate(article.created_at)}
+                        <span className="topic-cat">
+                          <strong>nc/{article.belongs_to}</strong>
+                        </span>
+                      </p>
+                      <Link
+                        to={`/articles/${article._id}`}
+                        className="article-title"
+                      >
+                        <strong>{article.title}</strong>
                       </Link>
-
-                      <p className="article-body">{article.body}</p>
+                      <p className="article-body">
+                        {article.body
+                          .split(" ")
+                          .slice(0, 60)
+                          .join(" ")}
+                        {article.body.split(" ").length > 60 && (
+                          <i className="fas fa-arrow-right" />
+                        )}
+                      </p>
+                      {`${article.comment_count} ${(article.comment_count ===
+                        1 &&
+                        `Comment`) ||
+                        `Comments`}`}
+                      <i class="fas fa-comment" />
                     </div>
-                    {/* <Vote
-                      votes={article.votes}
-                      _id={article._id}
-                      section={"articles"}
-                    /> */}
                   </div>
                 );
               })}
