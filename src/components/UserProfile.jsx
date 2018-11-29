@@ -9,15 +9,13 @@ class UserProfile extends Component {
   render() {
     const { username, name, avatar_url } = this.state.user;
     return (
-      <div>
-        <h1>USER PROFILE</h1>
-        <div className="userprofile">
-          <img src={avatar_url} height="90px" width="90px" />
-          <p />
-          <strong>Username:</strong> {username}
-          <p />
-          <strong>Real name:</strong> {name}
-        </div>
+      <div className="userprofile">
+        <strong /> <h2>{username}</h2>
+        <p />
+        <img src={avatar_url} height="90px" width="90px" />
+        <p />
+        <p />
+        <strong>Real name:</strong> {name}
       </div>
     );
   }

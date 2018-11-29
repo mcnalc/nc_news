@@ -1,16 +1,13 @@
 .App {
   background-color: lightblue;
   /* border: 20px solid black; */
-  text-align: center;
-  display: inline-block;
-  /* display: grid; */
-  /* grid-template-columns: 3.5fr 1.5fr; */
-  grid-template-rows: 2% 10% 10% 60% 5%;
+
+  display: grid;
+  grid-template-rows: 20% 10% 60% 10%;
   grid-template-areas:
-    "login login"
     "header header"
     "nav nav"
-    "main"
+    "main main"
     "footer footer";
 }
 
@@ -27,7 +24,7 @@ h1 {
 .header {
   border: 2px solid;
   grid-area: header;
-  background-image: "../public/newspaper.jpeg";
+  text-align: center;
 }
 
 .topic-cat {
@@ -66,12 +63,13 @@ a:active {
   background-color: black;
   color: white;
   grid-area: nav;
+  text-align: center;
 }
 
 .articles {
   border: 4px solid black;
   width: 70%;
-  display: inline-block;
+  display: block;
   border-radius: 15px;
   grid-area: main;
   background-color: white;
@@ -190,12 +188,18 @@ a:active {
 }
 .userprofile {
   background-color: white;
-  /* width: 60%; */
-  /* display: inline-block; */
+  border-radius: 15px;
+  border: 4px solid black;
+  margin: 20px;
+  padding: 20px;
+
+  width: 60%;
 }
 
 .footer {
   border: 2px solid black;
   background-color: black;
   color: white;
+  grid-area: footer;
+  text-align: center;
 }
