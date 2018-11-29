@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import { Router } from "@reach/router";
+import { Router, navigate } from "@reach/router";
 import Header from "./components/Header";
 import Login from "./components/Login";
 import Articles from "./components/Articles";
@@ -10,6 +10,7 @@ import UserProfile from "./components/UserProfile";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import * as api from "./api";
+import NotFound from "./components/NotFound";
 
 class App extends Component {
   state = {
@@ -21,7 +22,7 @@ class App extends Component {
     return (
       <div className="App">
         <Login user={currentUser} login={this.login}>
-          <Header />
+          <Header user={currentUser} />
           <Nav topics={this.state.topics} user={currentUser} />
           <Router>
             <Articles path="/" user={currentUser} />
@@ -32,6 +33,7 @@ class App extends Component {
               user={currentUser}
             />
             <UserProfile path="users/:username" user={currentUser} />
+            <NotFound default />
           </Router>
           <Footer />
         </Login>
@@ -51,6 +53,12 @@ class App extends Component {
       user
     });
   };
+  logout = () => {
+    sessionStorage.clear();
+    this.setState({
+      user: {}
+    });
+    navigate("/");
+  };
 }
-
 export default App;

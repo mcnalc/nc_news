@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import * as api from "../api";
-import { Link } from "@reach/router";
+import { Link, navigate } from "@reach/router";
 import PostArticle from "./PostArticle";
 import Vote from "./Vote";
 import formatDate from "./utils/formatDate";
@@ -16,7 +16,7 @@ export default class Articles extends Component {
         <PostArticle addArticle={this.addArticle} user={this.props.user} />
         <section>
           {this.state.loading ? (
-            <h2>Loading...</h2>
+            <h1>Loading...</h1>
           ) : (
             <div>
               {this.state.articles.map(article => {
@@ -85,13 +85,27 @@ export default class Articles extends Component {
 
   fetchArticles = () => {
     const { topic } = this.props;
-    api.getArticles(topic).then(articles => {
-      console.log(articles);
-      this.setState({
-        articles: articles,
-        loading: false
+    api
+      .getArticles(topic)
+      .then(articles => {
+        articles.sort(function(a, b) {
+          return new Date(b.created_at) - new Date(a.created_at);
+        });
+        this.setState({
+          articles: articles,
+          loading: false
+        });
+      })
+      .catch(err => {
+        console.log("am i here?");
+        navigate("/error", {
+          replace: true,
+          state: {
+            errCode: err.response.status,
+            errMsg: err.response.data.msg
+          }
+        });
       });
-    });
   };
 
   addArticle = newArticle => {

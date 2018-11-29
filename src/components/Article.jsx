@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import * as api from "../api";
-import { Link } from "@reach/router";
+import { Link, navigate } from "@reach/router";
 import formatDate from "./utils/formatDate";
 import Vote from "./Vote";
 const BASE_URL = `https://clairencnews.herokuapp.com/api`;
@@ -28,8 +28,7 @@ export default class Article extends Component {
                 {this.state.article.created_by.username}
                 <img
                   src={this.state.article.created_by.avatar_url}
-                  height="20"
-                  width="20"
+                  className="tiny-avatar"
                 />
               </strong>
             </Link>
@@ -59,11 +58,23 @@ export default class Article extends Component {
   };
 
   fetchArticle = () => {
-    api.getArticle(this.props.article_id).then(article => {
-      this.setState({
-        article,
-        loading: false
+    api
+      .getArticle(this.props.article_id)
+      .then(article => {
+        this.setState({
+          article,
+          loading: false
+        });
+      })
+      .catch(err => {
+        console.log("am i here?");
+        navigate("/error", {
+          replace: true,
+          state: {
+            errCode: err.response.status,
+            errMsg: err.response.data.msg
+          }
+        });
       });
-    });
   };
 }

@@ -27,7 +27,9 @@ export default class PostComment extends Component {
             />
 
             <br />
-            <button className="submit-button">Submit</button>
+            <button className="submit-button">
+              <i class="far fa-envelope" />
+            </button>
           </form>
         </div>
       </div>

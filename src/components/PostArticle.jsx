@@ -14,9 +14,8 @@ export default class PostArticle extends Component {
     return (
       <div>
         <div className="postarticle">
-          <h1>
-            <i class="fas fa-pen-square" />
-          </h1>
+          <i className="fas fa-pen-square" />
+
           <form onSubmit={this.handleSubmit} className="article-form">
             <input
               className="title-input"
@@ -51,7 +50,9 @@ export default class PostArticle extends Component {
               })}
             </select>
             <br />
-            <button className="submit-button">Submit</button>
+            <button className="submit-button">
+              <i class="far fa-envelope" />
+            </button>
           </form>
         </div>
       </div>

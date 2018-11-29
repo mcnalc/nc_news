@@ -3,7 +3,14 @@ import React from "react";
 const Footer = () => {
   return (
     <div className="footer">
-      <h1>Footer</h1>
+      Follow us on ->{" "}
+      <span classname="icons">
+        <i className="fab fa-twitter" />
+        {" | "}
+        <i class="fab fa-instagram" />
+        {" | "}
+        <i class="fab fa-facebook" />
+      </span>
     </div>
   );
 };
