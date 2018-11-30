@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import * as api from "../api";
 import { Link, navigate } from "@reach/router";
+import Comments from "./Comments";
 import formatDate from "./utils/formatDate";
 import Vote from "./Vote";
 const BASE_URL = `https://clairencnews.herokuapp.com/api`;
@@ -11,7 +12,15 @@ export default class Article extends Component {
     loading: true
   };
   render() {
-    const { title, body, comment_count, votes, _id } = this.state.article;
+    const {
+      article,
+      title,
+      body,
+      comment_count,
+      votes,
+      _id
+    } = this.state.article;
+    const user = this.props;
     return this.state.loading ? (
       <h2>Loading...</h2>
     ) : (
@@ -27,6 +36,7 @@ export default class Article extends Component {
                 {this.state.article.created_by.username}
                 <img
                   src={this.state.article.created_by.avatar_url}
+                  onError={e => (e.target.src = "/default.jpeg")}
                   className="tiny-avatar"
                 />
               </strong>

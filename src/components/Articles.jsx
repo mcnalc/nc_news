@@ -31,8 +31,7 @@ export default class Articles extends Component {
                         />
                       </div>
                       <div className="meta-info">
-                        Posted by {article.created_by.username}
-                        {" | "}
+                        Posted by {article.created_by.username} {" | "}
                         {formatDate(article.created_at)}
                       </div>
                       <span className="topic-cat">
@@ -54,19 +53,17 @@ export default class Articles extends Component {
                           <i className="fas fa-arrow-right" />
                         )}
                       </p>
-                      {/* <div className="article-comments">
-                        {`${article.comment_count} ${(article.comment_count ===
-                          1 &&
-                          `Comment`) ||
-                          `Comments`}`}{" "}
-                        <i class="fas fa-comment" />
-                      </div> */}
-                      <Link key={article._id} to={`/article/${article._id}`}>
+
+                      <Link
+                        key={article._id}
+                        to={`/articles/${article._id}/comments`}
+                      >
                         <span className="article-comments">
                           {`${
                             article.comment_count
                           } ${(article.comment_count === 1 && `Comment`) ||
                             `Comments`}`}
+                          <i class="fas fa-comment" />
                         </span>
                       </Link>
                     </div>

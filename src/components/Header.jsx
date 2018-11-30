@@ -8,7 +8,11 @@ class Header extends Component {
       <div className="header">
         <span className="logged-in">
           <Link to={`/users/${user.username}`}>
-            <img src={user.avatar_url} className="tiny-avatar" />{" "}
+            <img
+              src={user.avatar_url}
+              onError={e => (e.target.src = "/default.jpeg")}
+              className="tiny-avatar"
+            />{" "}
             <strong>{user.username}</strong>
           </Link>
           {" | "}

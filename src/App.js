@@ -41,17 +41,24 @@ class App extends Component {
     );
   }
   componentDidMount() {
-    api.getTopics().then(topics => {
+    this.fetchTopics();
+    const user = localStorage.getItem("user");
+    if (user) this.setState({ user: JSON.parse(user) });
+  }
+
+  fetchTopics = () => {
+    api.getTopics().then(newTopics => {
       this.setState({
-        topics
+        topics: newTopics
       });
     });
-  }
+  };
 
   userLogin = user => {
     this.setState({
       user
     });
+    localStorage.setItem("user", JSON.stringify(user));
   };
 
   userLogout = () => {

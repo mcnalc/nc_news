@@ -67,3 +67,8 @@ export const vote = async (id, section, direction) => {
   );
   console.log(data);
 };
+
+export const getUserComments = user_id => {
+  const url = `${BASE_URL}/users/${user_id}/comments`;
+  return axios.get(url).then(({ data }) => data.comments);
+};

@@ -12,7 +12,13 @@ class UserProfile extends Component {
       <div className="userprofile">
         <strong /> <h2>{username}</h2>
         <p />
-        <img src={avatar_url} height="90px" width="90px" />
+        <img
+          src={avatar_url}
+          onError={e => (e.target.src = "/default.jpeg")}
+          height="90px"
+          width="90px"
+          className="profile-pic"
+        />
         <p />
         <p />
         <strong>Real name:</strong> {name}
