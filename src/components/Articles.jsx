@@ -54,13 +54,21 @@ export default class Articles extends Component {
                           <i className="fas fa-arrow-right" />
                         )}
                       </p>
-                      <div className="article-comments">
+                      {/* <div className="article-comments">
                         {`${article.comment_count} ${(article.comment_count ===
                           1 &&
                           `Comment`) ||
                           `Comments`}`}{" "}
                         <i class="fas fa-comment" />
-                      </div>
+                      </div> */}
+                      <Link key={article._id} to={`/article/${article._id}`}>
+                        <span className="article-comments">
+                          {`${
+                            article.comment_count
+                          } ${(article.comment_count === 1 && `Comment`) ||
+                            `Comments`}`}
+                        </span>
+                      </Link>
                     </div>
                   </div>
                 );

@@ -21,8 +21,8 @@ class App extends Component {
     const currentUser = this.state.user;
     return (
       <div className="App">
-        <Login user={currentUser} login={this.login}>
-          <Header user={currentUser} />
+        <Login user={currentUser} userLogin={this.userLogin}>
+          <Header user={currentUser} userLogout={this.userLogout} />
           <Nav topics={this.state.topics} user={currentUser} />
           <Router>
             <Articles path="/" user={currentUser} />
@@ -48,17 +48,18 @@ class App extends Component {
     });
   }
 
-  login = user => {
+  userLogin = user => {
     this.setState({
       user
     });
   };
-  logout = () => {
-    sessionStorage.clear();
+
+  userLogout = () => {
     this.setState({
       user: {}
     });
-    navigate("/");
+    localStorage.removeItem("user");
   };
 }
+
 export default App;

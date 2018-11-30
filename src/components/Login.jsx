@@ -8,7 +8,6 @@ class Login extends Component {
   };
   render() {
     const { user, children } = this.props;
-    console.log(user);
     const { username } = this.state;
     if (user.username) return children;
     return (
@@ -41,8 +40,7 @@ class Login extends Component {
   handleSubmit = event => {
     event.preventDefault();
     api.login(this.state.username).then(user => {
-      console.log(user);
-      this.props.login(user);
+      this.props.userLogin(user);
     });
   };
 }

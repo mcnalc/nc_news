@@ -16,11 +16,10 @@ export default class Article extends Component {
       <h2>Loading...</h2>
     ) : (
       <div key={title} className="articles">
-        <div className="one-article">
+        <div className="single-article">
           <div classname="votes">
             <Vote className="votes" votes={votes} _id={_id} />
           </div>
-          <h1 className="article-title">{title}</h1>
           <div className="meta-info">
             Posted by: {""}
             <Link to={`/users/${this.state.article.created_by.username}`}>
@@ -34,10 +33,14 @@ export default class Article extends Component {
             </Link>
             {" | "} {formatDate(this.state.article.created_at)}
           </div>
-          <div classname="article-body">{body}</div>
-          <Link to={`/articles/${this.props.article_id}/comments`}>
-            {comment_count} Comments <i class="fas fa-comment" />
-          </Link>
+          <h1 className="article-title">{title}</h1>
+
+          <p classname="article-body">{body}</p>
+          <div className="article-comments">
+            <Link to={`/articles/${this.props.article_id}/comments`}>
+              {comment_count} Comments <i class="fas fa-comment" />
+            </Link>
+          </div>
         </div>
       </div>
     );

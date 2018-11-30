@@ -1,15 +1,24 @@
 import React, { Component } from "react";
+import { Link } from "@reach/router";
 
 class Header extends Component {
   render() {
-    const { topics, user, logout } = this.props;
+    const { user, userLogout } = this.props;
     return (
       <div className="header">
         <span className="logged-in">
-          <img src={user.avatar_url} className="tiny-avatar" />{" "}
-          <strong>{user.username}</strong>
+          <Link to={`/users/${user.username}`}>
+            <img src={user.avatar_url} className="tiny-avatar" />{" "}
+            <strong>{user.username}</strong>
+          </Link>
           {" | "}
-          <button onClick={logout}>Log Out</button>
+          <button
+            onClick={() => {
+              userLogout();
+            }}
+          >
+            Log Out
+          </button>
         </span>
         <h1 className="main-heading">
           NC News <i class="far fa-newspaper" />
