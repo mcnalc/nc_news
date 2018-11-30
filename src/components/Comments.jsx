@@ -38,6 +38,7 @@ export default class Comments extends Component {
                     Posted by{" "}
                     <img
                       src={comment.created_by.avatar_url}
+                      onError={e => (e.target.src = "/default.jpeg")}
                       className="tiny-avatar"
                     />
                     {comment.created_by.username}

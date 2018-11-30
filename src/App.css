@@ -1,8 +1,6 @@
 .App {
   background-color: lightblue;
   font-family: "PT Sans", sans-serif;
-  /* border: 20px solid black; */
-
   display: grid;
   grid-template-rows: 20% 10% 60% 10%;
   grid-template-areas:
@@ -44,11 +42,8 @@ h1 {
 .topic-cat {
   color: black;
   grid-area: topic;
-  /* border: 2px solid black; */
   padding: 0px 20px;
 }
-
-/* unvisited link */
 
 a {
   text-decoration: none;
@@ -58,17 +53,14 @@ a:link {
   color: red;
 }
 
-/* visited link */
 a:visited {
   color: darkred;
 }
 
-/* mouse over link */
 a:hover {
   color: purple;
 }
 
-/* selected link */
 a:active {
   color: blue;
 }
@@ -216,7 +208,6 @@ nav. a:link {
 }
 
 .submit-button {
-  /* background-color: hotpink; */
   height: 20px;
   width: 30px;
   border-radius: 5px;
