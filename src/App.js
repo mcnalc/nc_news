@@ -15,6 +15,7 @@ import NotFound from "./components/NotFound";
 class App extends Component {
   state = {
     user: {},
+    loginError: false,
     topics: []
   };
   render() {
@@ -56,7 +57,8 @@ class App extends Component {
 
   userLogin = user => {
     this.setState({
-      user
+      user,
+      loginError: false
     });
     localStorage.setItem("user", JSON.stringify(user));
   };
