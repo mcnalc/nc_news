@@ -12,6 +12,7 @@ class Header extends Component {
               src={user.avatar_url}
               onError={e => (e.target.src = "/default.jpeg")}
               className="tiny-avatar"
+              alt="default user avatar"
             />{" "}
             <strong>{user.username}</strong>
           </Link>
@@ -27,7 +28,7 @@ class Header extends Component {
         </span>
         <h1 className="main-heading">
           <Link to="/">
-            NC News <i class="far fa-newspaper" />
+            NC News <i className="far fa-newspaper" />
           </Link>
         </h1>
       </div>

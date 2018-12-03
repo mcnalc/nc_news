@@ -9,7 +9,6 @@ export default class PostComment extends Component {
   };
 
   render() {
-    const topics = ["Select", "coding", "football", "cooking"];
     return (
       <div>
         <div className="postarticle">

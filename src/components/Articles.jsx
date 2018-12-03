@@ -12,6 +12,12 @@ export default class Articles extends Component {
     loading: true
   };
   render() {
+    if (this.state.loading)
+      return (
+        <div className="loading">
+          <i className="fa fa-spinner fa-pulse" aria-hidden="true" />
+        </div>
+      );
     return (
       <div>
         <PostArticle addArticle={this.addArticle} user={this.props.user} />
@@ -79,8 +85,6 @@ export default class Articles extends Component {
   }
 
   componentDidMount() {
-    console.log(this.props.topic);
-    console.log("mounted");
     this.fetchArticles();
   }
 
@@ -103,7 +107,6 @@ export default class Articles extends Component {
         });
       })
       .catch(err => {
-        console.log("am i here?");
         navigate("/error", {
           replace: true,
           state: {

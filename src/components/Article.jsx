@@ -22,13 +22,11 @@ export default class Article extends Component {
     } = this.state.article;
     const user = this.props;
     return this.state.loading ? (
-      <h2>Loading...</h2>
+      <i className="fa fa-spinner fa-pulse" aria-hidden="true" />
     ) : (
       <div key={title} className="articles">
         <div className="single-article">
-          <div classname="votes">
-            <Vote className="votes" votes={votes} _id={_id} />
-          </div>
+          <Vote className="votes" votes={votes} _id={_id} />
           <div className="meta-info">
             Posted by: {""}
             <Link to={`/users/${this.state.article.created_by.username}`}>

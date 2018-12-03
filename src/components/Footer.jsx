@@ -4,12 +4,12 @@ const Footer = () => {
   return (
     <div className="footer">
       Follow us on ->{" "}
-      <span classname="icons">
+      <span className="icons">
         <i className="fab fa-twitter" />
         {" | "}
-        <i class="fab fa-instagram" />
+        <i className="fab fa-instagram" />
         {" | "}
-        <i class="fab fa-facebook" />
+        <i className="fab fa-facebook" />
       </span>
     </div>
   );

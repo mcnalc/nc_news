@@ -3,6 +3,7 @@ import * as api from "../api";
 import PostComment from "./PostComment";
 import formatDate from "./utils/formatDate";
 import { Link, navigate } from "@reach/router";
+import Article from "./Article";
 
 export default class Comments extends Component {
   state = {

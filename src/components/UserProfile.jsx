@@ -18,6 +18,7 @@ class UserProfile extends Component {
           height="90px"
           width="90px"
           className="profile-pic"
+          alt="user profile avatar"
         />
         <p />
         <p />
