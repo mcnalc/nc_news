@@ -8,19 +8,24 @@ export default class Vote extends Component {
   render() {
     return (
       <div>
-        <button
-          disabled={this.state.voteChange === 1}
-          onClick={() => this.vote("up")}
-        >
-          <i class="fas fa-arrow-up" />
-        </button>
+        <div className="upvote">
+          <button
+            disabled={this.state.voteChange === 1}
+            onClick={() => this.vote("up")}
+          >
+            <i class="fas fa-arrow-up" />
+          </button>
+        </div>
+
         <p>{`${this.props.votes + this.state.voteChange}`}</p>
-        <button
-          disabled={this.state.voteChange === -1}
-          onClick={() => this.vote("down")}
-        >
-          <i class="fas fa-arrow-down" />
-        </button>
+        <div className="downvote">
+          <button
+            disabled={this.state.voteChange === -1}
+            onClick={() => this.vote("down")}
+          >
+            <i class="fas fa-arrow-down" />
+          </button>
+        </div>
       </div>
     );
   }

@@ -30,7 +30,8 @@ h1 {
   justify-content: center;
   padding: 10px;
   display: block;
-  margin: 10px auto;
+  margin: auto;
+  width: 70%;
 }
 
 .header {
@@ -212,6 +213,27 @@ nav. a:link {
   width: 30px;
   border-radius: 5px;
 }
+
+.submit-button:hover {
+  transform: scale(1.25);
+}
+
+.upvote:hover {
+  transform: scale(1.25);
+}
+
+.downvote:hover {
+  transform: scale(1.25);
+}
+
+.logout:hover {
+  transform: scale(1.15);
+}
+.container {
+  text-align: center;
+  background-color: lightblue;
+  height: 100vh;
+}
 .not-found {
   background-color: white;
   height: 300px;
@@ -227,6 +249,18 @@ nav. a:link {
   width: 80%;
 }
 
+.username-input {
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+  /* width: 30%; */
+}
+
+.password-input {
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+}
 .fas fa-pen-square {
   height: 20px;
 }

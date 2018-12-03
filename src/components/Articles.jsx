@@ -4,6 +4,7 @@ import { Link, navigate } from "@reach/router";
 import PostArticle from "./PostArticle";
 import Vote from "./Vote";
 import formatDate from "./utils/formatDate";
+import Comments from "./Comments";
 
 export default class Articles extends Component {
   state = {

@@ -21,22 +21,24 @@ class App extends Component {
   render() {
     const currentUser = this.state.user;
     return (
-      <div className="App">
+      <div className="container">
         <Login user={currentUser} userLogin={this.userLogin}>
-          <Header user={currentUser} userLogout={this.userLogout} />
-          <Nav topics={this.state.topics} user={currentUser} />
-          <Router>
-            <Articles path="/" user={currentUser} />
-            <Articles path="/topics/:topic/articles" user={currentUser} />
-            <Article path="/articles/:article_id" user={currentUser} />
-            <Comments
-              path="/articles/:article_id/comments"
-              user={currentUser}
-            />
-            <UserProfile path="users/:username" user={currentUser} />
-            <NotFound default />
-          </Router>
-          <Footer />
+          <div className="App">
+            <Header user={currentUser} userLogout={this.userLogout} />
+            <Nav topics={this.state.topics} user={currentUser} />
+            <Router>
+              <Articles path="/" user={currentUser} />
+              <Articles path="/topics/:topic/articles" user={currentUser} />
+              <Article path="/articles/:article_id" user={currentUser} />
+              <Comments
+                path="/articles/:article_id/comments"
+                user={currentUser}
+              />
+              <UserProfile path="users/:username" user={currentUser} />
+              <NotFound default />
+            </Router>
+            <Footer />
+          </div>
         </Login>
       </div>
     );

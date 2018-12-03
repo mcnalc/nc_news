@@ -1,44 +1,62 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Northcoders News
 
-## Available Scripts
+Northcoders News is an app in a similar style to Reddit, where users can post and read articles and comments on a variety of topics. This repo contains the front end of the project, which was built using React. You can see a live version [here](https://www.netlify.com/).
 
-In the project directory, you can run:
+I previously created a RESTful API using Express.js and a MongoDB database.
 
-### `npm start`
+[Back-end live link](https://clairencnews.herokuapp.com/api)
+[Back-end repo](https://github.com/mcnalc/BE2-northcoders-news)
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Functionality
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+Users can...
 
-### `npm test`
+- log in with their username and are given an error message if the username does not exist
+- log out of the app
+- view titles, snippets and topic categories for all articles posted on the homepage
+- filter articles by topic
+- click on an article title and snippet to view the full article and its comments
+- post new articles and comment on existing articles
+- delete comments they have made
+- upvote or downvote articles and comments
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting started
 
-### `npm run build`
+### Installing the app
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone this repo
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+```
+git clone https://github.com/mcnalc/nc-News
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. cd into the cloned repo and install all package dependencies
 
-### `npm run eject`
+```
+npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+The dependencies which will install are:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- react
+- axios
+- @reach/router
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Running the app
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Run a local version of the app on localhost:3000
 
-## Learn More
+```
+npm start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+This will start up the development server and open the app in a new browser tab. As there is no functionality for registering as a new user, you can log in as 'jessjelly', with no password required.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Deployment
+
+The project has been deployed to Netlify. The back end has been deployed to Heroku (see links above).
+
+## Author
+
+Claire M
+Github - mcnalc

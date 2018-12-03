@@ -17,6 +17,7 @@ class Header extends Component {
           </Link>
           {" | "}
           <button
+            className="logout"
             onClick={() => {
               userLogout();
             }}
@@ -25,7 +26,9 @@ class Header extends Component {
           </button>
         </span>
         <h1 className="main-heading">
-          NC News <i class="far fa-newspaper" />
+          <Link to="/">
+            NC News <i class="far fa-newspaper" />
+          </Link>
         </h1>
       </div>
     );

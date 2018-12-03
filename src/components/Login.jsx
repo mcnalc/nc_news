@@ -17,6 +17,7 @@ class Login extends Component {
         <form onSubmit={this.handleSubmit}>
           <label htmlFor="username">Username:</label>
           <input
+            className="username-input"
             type="text"
             value={this.state.username}
             id="username"
@@ -24,7 +25,12 @@ class Login extends Component {
             placeholder="jessjelly"
           />
           <label htmlFor="password">Password:</label>
-          <input type="password" id="password" onChange={this.handleChange} />
+          <input
+            className="password-input"
+            type="password"
+            id="password"
+            onChange={this.handleChange}
+          />
           <button>Log in</button>
         </form>
       </div>
