@@ -1,5 +1,5 @@
 .App {
-  background-color: lightblue;
+  background-color: white;
   font-family: "PT Sans", sans-serif;
   display: grid;
   grid-template-rows: 20% 10% 60% 10%;
@@ -88,43 +88,34 @@ nav. a:link {
 
 .articles {
   border: 4px solid black;
+  background-color: white;
   width: 70%;
   /* display: block; */
-  border-radius: 15px;
+  border-radius: 0px;
   grid-area: main;
-  background-color: white;
   padding: 10px;
   margin: 10px auto;
 }
 
-.one-article {
+/* .one-article {
   width: 70%;
-  display: grid;
-  grid-template-columns: 30% 70%;
-  grid-template-rows: 10% 20% 50% 20%;
-  grid-template:
-    "votes meta . "
-    "votes title . "
-    ". body . "
-    "comments . . ";
+  display: flex;
+  flex-direction: row;
+
   background-color: white;
   padding: 10px;
   margin: auto;
-}
+} */
 
 .single-article {
   margin: 0px auto;
-  /* display: grid;
-  grid-template-columns: 30% 70%;
-  grid-template-rows: 10% 10% 60% 20%;
-  grid-template-areas:
-    "votes meta"
-    "votes title";
-} */
+  /* display: grid; */
+  /* grid-template-rows: 1fr 3fr 1fr;
+  grid-template-columns: 1fr; */
+  /* grid-template-areas: " */
 }
 
 .article-stub {
-  background-color: white;
   text-align: center;
   margin: 0px auto;
   min-height: 130px;
@@ -146,7 +137,6 @@ nav. a:link {
   font-family: "PT Sans", sans-serif;
   text-align: justify;
   padding: 10px 50px;
-  background-color: white;
   width: 70%;
   margin: auto;
   grid-area: body;
@@ -156,7 +146,6 @@ nav. a:link {
   display: inline-block;
   font-size: 22px;
   vertical-align: top;
-  background-color: white;
   width: 70%;
   margin: auto;
   grid-area: title;
@@ -165,7 +154,7 @@ nav. a:link {
 .comments {
   border: 4px solid black;
   width: 70%;
-  border-radius: 15px;
+  border-radius: 0px;
   padding: 10px;
   margin: 10px auto;
   background-color: white;
@@ -185,10 +174,9 @@ nav. a:link {
   text-align: center;
   border: 4px solid black;
   width: 50%;
-  border-radius: 20px;
+  border-radius: 0px;
 }
 .meta-info {
-  background-color: white;
   color: grey;
   text-align: right;
   grid-area: meta;
@@ -230,7 +218,7 @@ nav. a:link {
 }
 .container {
   text-align: center;
-  background-color: lightblue;
+  background-color: white;
   height: 100vh;
 }
 .not-found {

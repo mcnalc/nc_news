@@ -18,7 +18,7 @@ export default class Article extends Component {
         <div className="single-article">
           <Vote className="votes" votes={votes} _id={_id} />
           <div className="meta-info">
-            Posted by: {""}
+            Posted by:{" "}
             <Link to={`/users/${this.state.article.created_by.username}`}>
               <strong>
                 {this.state.article.created_by.username}
