@@ -1,10 +1,8 @@
 import React, { Component } from "react";
 import * as api from "../api";
 import { Link, navigate } from "@reach/router";
-import Comments from "./Comments";
 import formatDate from "./utils/formatDate";
 import Vote from "./Vote";
-const BASE_URL = `https://clairencnews.herokuapp.com/api`;
 
 export default class Article extends Component {
   state = {
@@ -12,15 +10,7 @@ export default class Article extends Component {
     loading: true
   };
   render() {
-    const {
-      article,
-      title,
-      body,
-      comment_count,
-      votes,
-      _id
-    } = this.state.article;
-    const user = this.props;
+    const { title, body, comment_count, votes, _id } = this.state.article;
     return this.state.loading ? (
       <i className="fa fa-spinner fa-pulse" aria-hidden="true" />
     ) : (
@@ -36,6 +26,7 @@ export default class Article extends Component {
                   src={this.state.article.created_by.avatar_url}
                   onError={e => (e.target.src = "/default.jpeg")}
                   className="tiny-avatar"
+                  alt="default user avatar"
                 />
               </strong>
             </Link>
@@ -46,7 +37,7 @@ export default class Article extends Component {
           <p classname="article-body">{body}</p>
           <div className="article-comments">
             <Link to={`/articles/${this.props.article_id}/comments`}>
-              {comment_count} Comments <i class="fas fa-comment" />
+              {comment_count} Comments <i className="fas fa-comment" />
             </Link>
           </div>
         </div>

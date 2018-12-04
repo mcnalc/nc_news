@@ -13,7 +13,7 @@ export default class PostComment extends Component {
       <div>
         <div className="postarticle">
           <h1>
-            <i class="fas fa-pen-square" />
+            <i className="fas fa-pen-square" />
           </h1>
           <form onSubmit={this.handleSubmit} className="article-form">
             <textarea
@@ -27,7 +27,7 @@ export default class PostComment extends Component {
 
             <br />
             <button className="submit-button">
-              <i class="far fa-envelope" />
+              <i className="far fa-envelope" />
             </button>
           </form>
         </div>

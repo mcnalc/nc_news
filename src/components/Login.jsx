@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import * as api from "../api";
-import { Router, navigate } from "@reach/router";
 
 class Login extends Component {
   state = {
@@ -8,7 +7,6 @@ class Login extends Component {
   };
   render() {
     const { user, children } = this.props;
-    const { username } = this.state;
     if (user.username) return children;
     return (
       <div className="login">

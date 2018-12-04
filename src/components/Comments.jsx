@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import * as api from "../api";
 import PostComment from "./PostComment";
 import formatDate from "./utils/formatDate";
-import { Link, navigate } from "@reach/router";
-import Article from "./Article";
+import { navigate } from "@reach/router";
 
 export default class Comments extends Component {
   state = {
@@ -32,7 +31,7 @@ export default class Comments extends Component {
                       className="delete"
                       onClick={() => this.deleteComment(comment._id)}
                     >
-                      <i class="fas fa-trash-alt" />
+                      <i className="fas fa-trash-alt" />
                     </button>
                   ) : null}
                   <div className="meta-info">
@@ -41,6 +40,7 @@ export default class Comments extends Component {
                       src={comment.created_by.avatar_url}
                       onError={e => (e.target.src = "/default.jpeg")}
                       className="tiny-avatar"
+                      alt="default user avatar"
                     />
                     {comment.created_by.username}
                     {" | "}

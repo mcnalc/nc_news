@@ -13,7 +13,7 @@ export default class Vote extends Component {
             disabled={this.state.voteChange === 1}
             onClick={() => this.vote("up")}
           >
-            <i class="fas fa-arrow-up" />
+            <i className="fas fa-arrow-up" />
           </button>
         </div>
 
@@ -23,7 +23,7 @@ export default class Vote extends Component {
             disabled={this.state.voteChange === -1}
             onClick={() => this.vote("down")}
           >
-            <i class="fas fa-arrow-down" />
+            <i className="fas fa-arrow-down" />
           </button>
         </div>
       </div>

@@ -51,7 +51,7 @@ export default class PostArticle extends Component {
             </select>
             <br />
             <button className="submit-button">
-              <i class="far fa-envelope" />
+              <i className="far fa-envelope" />
             </button>
           </form>
         </div>

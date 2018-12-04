@@ -4,7 +4,6 @@ import { Link, navigate } from "@reach/router";
 import PostArticle from "./PostArticle";
 import Vote from "./Vote";
 import formatDate from "./utils/formatDate";
-import Comments from "./Comments";
 
 export default class Articles extends Component {
   state = {
@@ -38,7 +37,14 @@ export default class Articles extends Component {
                         />
                       </div>
                       <div className="meta-info">
-                        Posted by {article.created_by.username} {" | "}
+                        Posted by {article.created_by.username}{" "}
+                        <img
+                          src={article.created_by.avatar_url}
+                          onError={e => (e.target.src = "/default.jpeg")}
+                          className="tiny-avatar"
+                          alt="default user avatar"
+                        />
+                        {" | "}
                         {formatDate(article.created_at)}
                       </div>
                       <span className="topic-cat">
@@ -60,7 +66,6 @@ export default class Articles extends Component {
                           <i className="fas fa-arrow-right" />
                         )}
                       </p>
-
                       <Link
                         key={article._id}
                         to={`/articles/${article._id}/comments`}
@@ -70,7 +75,7 @@ export default class Articles extends Component {
                             article.comment_count
                           } ${(article.comment_count === 1 && `Comment`) ||
                             `Comments`}`}
-                          <i class="fas fa-comment" />
+                          <i className="fas fa-comment" />
                         </span>
                       </Link>
                     </div>

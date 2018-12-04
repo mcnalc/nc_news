@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import { Router, navigate } from "@reach/router";
+import { Router } from "@reach/router";
 import Header from "./components/Header";
 import Login from "./components/Login";
 import Articles from "./components/Articles";
