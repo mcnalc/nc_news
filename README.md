@@ -18,7 +18,7 @@ Users can...
 - click on an article title and snippet to view the full article and its comments
 - post new articles and comment on existing articles
 - delete comments they have made
-- upvote or downvote articles and comments
+- upvote or downvote articles
 
 ## Getting started
 
