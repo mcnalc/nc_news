@@ -15,13 +15,15 @@ export default class Article extends Component {
       <i className="fa fa-spinner fa-pulse" aria-hidden="true" />
     ) : (
       <div key={title} className="articles">
-        <div className="single-article">
-          <Vote className="votes" votes={votes} _id={_id} />
+        <div className="one-article-stub">
+          <div className="votes">
+            <Vote votes={votes} _id={_id} />
+          </div>
           <div className="meta-info">
             Posted by:{" "}
             <Link to={`/users/${this.state.article.created_by.username}`}>
               <strong>
-                {this.state.article.created_by.username}
+                {this.state.article.created_by.username}{" "}
                 <img
                   src={this.state.article.created_by.avatar_url}
                   onError={e => (e.target.src = "/default.jpeg")}
@@ -34,7 +36,7 @@ export default class Article extends Component {
           </div>
           <h1 className="article-title">{title}</h1>
 
-          <p classname="article-body">{body}</p>
+          <p className="article-body">{body}</p>
           <div className="article-comments">
             <Link to={`/articles/${this.props.article_id}/comments`}>
               {comment_count} Comments <i className="fas fa-comment" />

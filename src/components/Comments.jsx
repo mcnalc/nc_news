@@ -24,6 +24,7 @@ export default class Comments extends Component {
             />
 
             {this.state.comments.map(comment => {
+              if (!comment) return "No comments yet";
               return (
                 <div key={comment._id} className="comments">
                   {this.props.user._id === comment.created_by._id ? (
@@ -83,7 +84,7 @@ export default class Comments extends Component {
           replace: true,
           state: {
             errCode: err.response.status,
-            errMsg: err.response.data.msg
+            errMsg: "err.response.data.msg"
           }
         });
       });
