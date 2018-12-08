@@ -1,6 +1,6 @@
 # Northcoders News
 
-Northcoders News is an app in a similar style to Reddit, where users can post and read articles and comments on a variety of topics. This repo contains the front end of the project, which was built using React. You can see a live version [here](https://www.netlify.com/).
+Northcoders News is an app in a similar style to Reddit, where users can post and read articles and comments on a variety of topics. This repo contains the front end of the project, which was built using React. You can see a live version [here](https://mc-nc-news.netlify.com/).
 
 I previously created a RESTful API using Express.js and a MongoDB database.
 
