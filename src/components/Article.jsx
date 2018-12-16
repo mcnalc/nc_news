@@ -3,6 +3,7 @@ import * as api from "../api";
 import { Link, navigate } from "@reach/router";
 import formatDate from "./utils/formatDate";
 import Vote from "./Vote";
+import Comments from "./Comments";
 
 export default class Article extends Component {
   state = {
@@ -37,12 +38,10 @@ export default class Article extends Component {
           <h1 className="article-title">{title}</h1>
 
           <p className="article-body">{body}</p>
-          <div className="article-comments">
-            <Link to={`/articles/${this.props.article_id}/comments`}>
-              {comment_count} Comments <i className="fas fa-comment" />
-            </Link>
-          </div>
         </div>
+        <div className="comments-section" />
+
+        <Comments article_id={this.state.article._id} user={this.props.user} />
       </div>
     );
   }

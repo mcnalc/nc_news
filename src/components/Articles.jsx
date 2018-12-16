@@ -22,7 +22,7 @@ export default class Articles extends Component {
         <PostArticle addArticle={this.addArticle} user={this.props.user} />
         <section>
           {this.state.loading ? (
-            <h1>Loading...</h1>
+            <i className="fa fa-spinner fa-pulse" aria-hidden="true" />
           ) : (
             <div>
               {this.state.articles.map(article => {

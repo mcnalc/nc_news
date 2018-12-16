@@ -14,9 +14,10 @@ export default class Comments extends Component {
     return (
       <section>
         {this.state.loading ? (
-          <h1>Loading....</h1>
+          <i className="fa fa-spinner fa-pulse" aria-hidden="true" />
         ) : (
-          <div>
+          <div class="comments-section">
+            <h1>Comments</h1>
             <PostComment
               id={this.props.article_id}
               userId={this.props.user._id}
@@ -24,7 +25,6 @@ export default class Comments extends Component {
             />
 
             {this.state.comments.map(comment => {
-              if (!comment) return "No comments yet";
               return (
                 <div key={comment._id} className="comments">
                   {this.props.user._id === comment.created_by._id ? (

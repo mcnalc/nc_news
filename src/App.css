@@ -74,7 +74,7 @@ a:hover {
 }
 
 a:active {
-  color: blue;
+  color: purple;
 }
 
 .nav {
@@ -84,9 +84,10 @@ a:active {
   color: white;
   grid-area: nav;
   text-align: center;
+  height: 30px;
 }
 
-nav. a:link {
+.nav a:link {
   color: white;
 }
 .nav a:visited {
@@ -95,6 +96,10 @@ nav. a:link {
 
 .nav a:hover {
   color: purple;
+}
+
+.nav a:active {
+  color: white;
 }
 
 .header a:visited {
@@ -143,6 +148,7 @@ nav. a:link {
 
 .article-comments {
   grid-area: comments;
+  width: 70%;
 }
 
 .article-body {
@@ -167,7 +173,7 @@ nav. a:link {
 .comments {
   border: 4px solid black;
   width: 70%;
-  border-radius: 0px;
+  border-radius: 15px;
   padding: 10px;
   margin: 10px auto;
   background-color: white;
@@ -182,12 +188,12 @@ nav. a:link {
 
 .postarticle {
   background-color: white;
-  padding: 5px;
+  padding: 10px;
   margin: 10px auto;
   text-align: center;
   border: 4px solid black;
   width: 50%;
-  border-radius: 0px;
+  border-radius: 15px;
 }
 .meta-info {
   color: grey;
@@ -292,4 +298,20 @@ nav. a:link {
   color: white;
   grid-area: footer;
   text-align: center;
+  height: 30px;
+}
+
+.footer a:link {
+  color: white;
+}
+.footer a:visited {
+  color: white;
+}
+
+.footer a:hover {
+  color: purple;
+}
+
+.footer a:active {
+  color: white;
 }

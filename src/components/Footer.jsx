@@ -5,11 +5,17 @@ const Footer = () => {
     <div className="footer">
       Follow us on ->{" "}
       <span className="icons">
-        <i className="fab fa-twitter" />
+        <a href="http://www.twitter.com">
+          <i className="fab fa-twitter" />
+        </a>
         {" | "}
-        <i className="fab fa-instagram" />
+        <a href="http://www.instagram.com">
+          <i className="fab fa-instagram" />
+        </a>
         {" | "}
-        <i className="fab fa-facebook" />
+        <a href="http://www.facebook.com">
+          <i className="fab fa-facebook" />
+        </a>
       </span>
     </div>
   );
