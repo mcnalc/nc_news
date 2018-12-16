@@ -41,7 +41,12 @@ export default class Article extends Component {
         </div>
         <div className="comments-section" />
 
-        <Comments article_id={this.state.article._id} user={this.props.user} />
+        {comment_count && (
+          <Comments
+            article_id={this.state.article._id}
+            user={this.props.user}
+          />
+        )}
       </div>
     );
   }
