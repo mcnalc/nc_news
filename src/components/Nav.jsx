@@ -10,7 +10,7 @@ class Nav extends Component {
     return (
       <div className="nav">
         <strong>
-          <Link to="/">Home!</Link>
+          <Link to="/">Home</Link>
           {" | "}
           {topics.map(topic => {
             return (

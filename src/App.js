@@ -26,7 +26,7 @@ class App extends Component {
           <div className="App">
             <Header user={currentUser} userLogout={this.userLogout} />
             <Nav topics={this.state.topics} user={currentUser} />
-            <Router>
+            <Router className="content">
               <Articles path="/" user={currentUser} />
               <Articles path="/topics/:topic/articles" user={currentUser} />
               <Article path="/articles/:article_id" user={currentUser} />
