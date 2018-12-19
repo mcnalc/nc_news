@@ -1,8 +1,8 @@
 .App {
-  background-color: #66b2b2;
+  background-color: #009999;
   font-family: "PT Sans", sans-serif;
   display: grid;
-  grid-template-rows: 0.08fr 0.05fr 3.5fr 0.08fr;
+  grid-template-rows: 0.06fr 0.05fr 3.5fr 0.08fr;
   grid-template-areas:
     "header header"
     "nav nav"
@@ -30,7 +30,7 @@ h1 {
 
 .main-heading {
   text-align: center;
-  font-size: 40px;
+  font-size: 50px;
 }
 
 .login {
@@ -107,15 +107,14 @@ a:active {
 }
 
 .articles {
-  border: 3px solid black;
-
+  border: 1px solid white;
   background-color: white;
   width: 70%;
   min-width: 600px;
   border-radius: 15px;
   grid-area: main;
   padding: 10px;
-  margin: 10px auto;
+  margin: 15px auto;
 }
 
 .one-article-stub {
@@ -191,7 +190,7 @@ a:active {
   padding: 10px;
   margin: 10px auto;
   text-align: center;
-  border: 4px solid black;
+  border: 1px solid white;
   width: 50%;
   border-radius: 15px;
 }
