@@ -6,6 +6,9 @@ class Header extends Component {
     const { user, userLogout } = this.props;
     return (
       <div className="header">
+        <span className="main-heading">
+          <Link to="/">{`<NC News/>`}</Link>
+        </span>
         <span className="logged-in">
           <Link to={`/users/${user.username}`}>
             <img
@@ -26,11 +29,6 @@ class Header extends Component {
             Log Out
           </button>
         </span>
-        <h1 className="main-heading">
-          <Link to="/">
-            NC News <i className="far fa-newspaper" />
-          </Link>
-        </h1>
       </div>
     );
   }
