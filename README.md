@@ -28,7 +28,7 @@ Users can...
 1. Clone this repo
 
 ```
-git clone https://github.com/mcnalc/nc-News
+git clone https://github.com/mcnalc/nc_news
 ```
 
 2. cd into the cloned repo and install all package dependencies
