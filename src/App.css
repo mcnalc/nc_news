@@ -2,7 +2,7 @@
   background: white;
   font-family: "PT Sans", sans-serif;
   display: grid;
-  grid-template-rows: 0.01fr 0.05fr 3.5fr 0.08fr;
+  grid-template-rows: 0.01fr 0.01fr 3.5fr 0.08fr;
   grid-template-areas:
     "header header"
     "nav nav"
