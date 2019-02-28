@@ -29,7 +29,7 @@ class Login extends Component {
             id="password"
             onChange={this.handleChange}
           />
-          <button>Log in</button>
+          <button className="login-button">Log in</button>
         </form>
       </div>
     );
