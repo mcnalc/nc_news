@@ -11,7 +11,7 @@ class Login extends Component {
     return (
       <div className="login">
         <h1>Welcome to NC News!</h1>
-        <p>You need to log in to read and post</p>
+        <p className="login-text">You need to log in to read and post</p>
         <form onSubmit={this.handleSubmit}>
           <label htmlFor="username">Username:</label>
           <input
